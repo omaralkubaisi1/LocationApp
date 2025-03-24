@@ -1,0 +1,69 @@
+# dependencies
+node_modules/
+.env
+.expo
+
+# Expo
+.expo
+dist
+web-build
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# Log files
+*.log
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# React Native
+*.swp
+*.swo
+
+# Build output
+/build/
+# Android build folder (if applicable)
+android/app/build/
+
+# iOS build folder (if applicable)
+ios/build/
+
+# Android specific generated files
+*.apk
+*.aab
+
+# VSCode settings
+.vscode/
+
+# Temporary files
+*.bak
+*.swp
+
+# JetBrains/IntelliJ
+.idea/
