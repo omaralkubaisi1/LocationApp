@@ -61,6 +61,8 @@ export function Capitals() {
 
     return (
         <SafeAreaView style={[styles.scroll, styles.container]}>
+            <Image style={styles.headerImage} source={require("../assets/skyscrapers.jpg")} />
+
             <Portal>
                 <Modal style={styles.modal} visible={modalVisible} onDismiss={hideModal}>
                     <Text>{alertMessage}</Text>

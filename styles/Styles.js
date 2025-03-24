@@ -2,105 +2,105 @@ import { StyleSheet, Dimensions } from "react-native";
 import { MD3LightTheme } from "react-native-paper";
 
 export const styles = StyleSheet.create({
-    container: {
+    wrapper: {
         flex: 1,
-        marginHorizontal: 12,
+        paddingHorizontal: 14,
     },
-    loginPage: {
+    authPage: {
         flex: 1,
     },
-    loginContainer: {
+    authContainer: {
         flex: 1,
-        margin: 12,
-        padding: 18,
-        backgroundColor: '#fff',
-        borderRadius: 12,
+        padding: 16,
+        backgroundColor: '#F3F4F6',
+        borderRadius: 10,
     },
     map: {
-        width: Dimensions.get('window').width - 24,
-        height: Dimensions.get('window').height - 24,
-        marginVertical: 12,
+        width: Dimensions.get('window').width - 20,
+        height: Dimensions.get('window').height - 20,
+        marginVertical: 10,
+        marginHorizontal: 10,
     },
     headerImage: {
-        height: 160,
-        width: Dimensions.get('window').width,
+        height: 150,
+        width: '100%',
     },
     headline: {
         textAlign: 'center',
-        marginVertical: 18,
-        fontSize: 26,
-        color: '#1D4ED8',
+        marginVertical: 16,
+        fontSize: 24,
+        color: '#9333EA',
     },
-    subHeadline: {
+    subtitle: {
         textAlign: 'center',
-        marginBottom: 18,
-        fontSize: 17,
-        color: '#2563EB',
+        marginBottom: 16,
+        fontSize: 16,
+        color: '#7C3AED',
     },
-    itemView: {
+    listView: {
         flexDirection: 'row',
-        gap: 12,
+        gap: 10,
     },
-    item: {
-        marginVertical: 12,
-        padding: 12,
+    listItem: {
+        marginVertical: 10,
+        padding: 10,
         borderWidth: 1,
-        borderRadius: 6,
-        borderColor: '#94A3B8',
+        borderRadius: 8,
+        borderColor: '#9CA3AF',
     },
-    itemText: {
+    listItemText: {
         flex: 2,
-        color: '#374151',
+        color: '#4B5563',
     },
-    mapIcon: {
+    iconContainer: {
         flex: 1,
         alignItems: 'flex-end',
     },
-    rating: {
-        justifyContent: 'space-between',
+    ratingWrapper: {
+        justifyContent: 'space-around',
     },
-    image: {
-        width: 100,
-        height: 60,
+    thumbImage: {
+        width: 90,
+        height: 50,
         flex: 1,
         alignItems: 'flex-end',
     },
-    countryView: {
+    locationView: {
         flexDirection: 'row',
-        gap: 12,
+        gap: 10,
     },
-    modal: {
-        height: 100,
-        marginHorizontal: 40,
-        padding: 18,
+    popupModal: {
+        height: 110,
+        marginHorizontal: 35,
+        padding: 16,
         alignItems: 'center',
-        backgroundColor: '#E2E8F0',
-        borderRadius: 10,
+        backgroundColor: '#D1D5DB',
+        borderRadius: 12,
     },
 });
 
 export const Theme = {
     ...MD3LightTheme,
-    roundness: 10,
+    roundness: 8,
     colors: {
         ...MD3LightTheme.colors,
-        primary: "#2563EB",
+        primary: "#7C3AED",
         onPrimary: "#FFFFFF",
-        primaryContainer: "#DBEAFE",
-        onPrimaryContainer: "#1E3A8A",
-        secondary: "#6B7280",
+        primaryContainer: "#EDE9FE",
+        onPrimaryContainer: "#5B21B6",
+        secondary: "#4B5563",
         onSecondary: "#FFFFFF",
-        secondaryContainer: "#E5E7EB",
+        secondaryContainer: "#D1D5DB",
         onSecondaryContainer: "#374151",
-        background: "#F9FAFB",
-        onBackground: "#1F2937",
+        background: "#F3F4F6",
+        onBackground: "#111827",
         surface: "#FFFFFF",
         onSurface: "#1F2937",
-        surfaceVariant: "#E2E8F0",
-        onSurfaceVariant: "#374151",
-        error: "#DC2626",
+        surfaceVariant: "#D1D5DB",
+        onSurfaceVariant: "#4B5563",
+        error: "#B91C1C",
         onError: "#FFFFFF",
         errorContainer: "#FECACA",
-        onErrorContainer: "#991B1B",
+        onErrorContainer: "#7F1D1D",
     },
 };

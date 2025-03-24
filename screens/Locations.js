@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useContext, useCallback } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Image } from 'react-native'; // Lisätty Image import
 import { Button, Text, IconButton } from 'react-native-paper';
 import { Rating } from 'react-native-ratings';
 import { LocationContext } from '../contexts/LocationContext';
@@ -20,41 +20,47 @@ export function Locations() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.headline} variant='headlineMedium'>My Locations</Text>
-            <Button mode="contained" onPress={() => navigation.navigate('Adding Location')}>
-                Add New Location
-            </Button>
-            <ScrollView>
-                {locations.map((place, idx) => (
-                    <View 
-                        key={idx} 
-                        style={[styles.item, { backgroundColor: Theme.colors.elevation.level3 }]}
-                    >
-                        <View style={styles.itemView}>
-                            <View>
-                                <Text variant="headlineSmall">{place.location}</Text>
-                                <Text variant="bodyLarge">{place.description}</Text>
+            <View>
+                <Image 
+                    style={styles.headerImage} 
+                    source={require('../assets/toripolliisi.jpg')} 
+                />
+                <Text style={styles.headline} variant='headlineMedium'>My Locations</Text>
+                <Button mode="contained" onPress={() => navigation.navigate('Adding Location')}>
+                    Add New Location
+                </Button>
+                <ScrollView>
+                    {locations.map((place, idx) => (
+                        <View 
+                            key={idx} 
+                            style={[styles.item, { backgroundColor: Theme.colors.elevation?.level3 || '#fff' }]}
+                        >
+                            <View style={styles.itemView}>
+                                <View>
+                                    <Text variant="headlineSmall">{place.location}</Text>
+                                    <Text variant="bodyLarge">{place.description}</Text>
+                                </View>
+                                <IconButton
+                                    iconColor={Theme.colors.secondary}
+                                    style={styles.mapIcon}
+                                    icon="map-marker"
+                                    size={40}
+                                    onPress={() => handleNavigate(place.location)}
+                                />
                             </View>
-                            <IconButton
-                                iconColor={Theme.colors.secondary}
-                                style={styles.mapIcon}
-                                icon="map-marker"
-                                size={40}
-                                onPress={() => handleNavigate(place.location)}
+                            <Rating
+                                type='custom'
+                                ratingColor={Theme.colors.primary}
+                                tintColor={Theme.colors.elevation?.level3 || '#fff'}
+                                ratingCount={5}
+                                startingValue={place.rating}
+                                readonly
+                                starContainerStyle={{ alignSelf: 'center', backgroundColor: '#e7edda' }}
                             />
                         </View>
-                        <Rating
-                            type='custom'
-                            ratingColor={Theme.colors.primary}
-                            tintColor={Theme.colors.elevation.level3}
-                            ratingCount={5}
-                            startingValue={place.rating}
-                            readonly
-                            starContainerStyle={{ alignSelf: 'center', backgroundColor: '#e7edda' }}
-                        />
-                    </View>
-                ))}
-            </ScrollView>
+                    ))}
+                </ScrollView>
+            </View>
         </View>
     );
 }
