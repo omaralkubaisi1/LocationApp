@@ -25,21 +25,23 @@ export function AddingLocation() {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { flex: 1 }]}>
             <Text style={styles.headline} variant='headlineMedium'>Add New Location</Text>
             <TextInput mode='flat' label='Location' value={location} onChangeText={setLocation} />
             <TextInput mode='flat' label='Description' value={description} onChangeText={setDescription} />
             <Rating
                 type='custom'
                 ratingColor={Theme.colors.primary}
-                tintColor={Theme.colors.elevation.level3}
+                tintColor={Theme.colors.elevation?.level3 || '#fff'}
                 imageSize={55}
                 ratingCount={5}
                 startingValue={rating}
                 onFinishRating={setRating}
                 ratingContainerStyle={styles.rating}
             />
-            <Button mode="contained" onPress={handleAddLocation}>Save</Button>
+            <View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 20 }}>
+                <Button mode="contained" onPress={handleAddLocation}>Save</Button>
+            </View>
         </View>
     );
 }

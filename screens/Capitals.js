@@ -60,7 +60,7 @@ export function Capitals() {
     });
 
     return (
-        <SafeAreaView style={[styles.scroll, styles.container]}>
+        <SafeAreaView style={[styles.scroll, styles.container, { flex: 1 }]}>
             <Image style={styles.headerImage} source={require("../assets/skyscrapers.jpg")} />
 
             <Portal>
@@ -78,11 +78,8 @@ export function Capitals() {
                 onChangeText={setSearchQuery}
                 value={searchQuery}
             />
-            <Button mode="contained" onPress={fetchCountryData}>
-                Search
-            </Button>
 
-            <ScrollView>
+            <ScrollView style={{ flex: 1 }}>
                 {filteredResults.map((item, index) => (
                     <View
                         key={index}
@@ -96,6 +93,13 @@ export function Capitals() {
                     </View>
                 ))}
             </ScrollView>
+
+            {/* Nappi siirretty alaosaan */}
+            <View style={{ justifyContent: 'flex-end', marginBottom: 20 }}>
+                <Button mode="contained" onPress={fetchCountryData}>
+                    Search
+                </Button>
+            </View>
         </SafeAreaView>
     );
 }
